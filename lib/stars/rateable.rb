@@ -1,5 +1,4 @@
 module Stars::Rateable
-
   def self.included(base)
     base.has_many(:ratings, :as => :rateable)
     base.attr_readonly(:rating_average)
@@ -7,7 +6,6 @@ module Stars::Rateable
   end
 
   module InstanceMethods
-
     # Recalculate the average rating and save
     # it in column cache
     #
@@ -37,13 +35,5 @@ module Stars::Rateable
 
       floor + decimal_part
     end
-
   end
-
-  module ActiveRecord
-    def is_rateable
-      include ::Stars::Rateable
-    end
-  end
-
 end

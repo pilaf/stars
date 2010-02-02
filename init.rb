@@ -2,7 +2,7 @@
 ActionController::Routing::RouteSet::Mapper.send(:include, Stars::Routes)
 
 # Extend ActiveRecord with the is_rateable class method
-ActiveRecord::Base.send(:extend, Stars::Rateable::ActiveRecord)
+ActiveRecord::Base.send(:extend, Stars::ActiveRecordExtension)
 
 # Include helper
 ActionView::Base.send(:include, RatingsHelper)
