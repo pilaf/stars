@@ -114,6 +114,13 @@ To configure edit your <tt>config/initializers/stars_rating.rb</tt>.
 
 == Known issues
 
+* Because of the way the JavaScript event handler works, all elements in the
+  nested chain from the rating widget to the top of the document must have the
+  "hasLayout" property for IE6 and IE7, or otherwise the Prototype function
+  Element.cumulativeOffset calculates a wrong offset and all hell breaks loose.
+  Check http://www.satzansatz.de/cssd/onhavinglayout.html for a list of ways in
+  which you can achieve hasLayout in IE6 and IE7.
+
 == Credits
 
 Copyright (c) 2010 Pedro Fayolle (aka Pilaf), released under the MIT license
