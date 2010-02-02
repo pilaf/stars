@@ -6,10 +6,9 @@
       new Ajax.Request(target.readAttribute('data-rating-url'), {
         parameters: {'rating[rational_rating]': rating},
         onSuccess: function() {
-          alert('(:');
+          target.addClassName('static');
         },
         onFailure: function() {
-          alert('):');
         }
       });
     }
@@ -17,7 +16,7 @@
 
   Event.observe(document, 'mouseover', function(event) {
     var target = event.element();
-    if ((target.tagName == 'BUTTON') && target.hasClassName('stars_rating')) {
+    if ((target.tagName == 'BUTTON') && target.hasClassName('stars_rating') && !target.hasClassName('static')) {
 
       var targetX = target.cumulativeOffset().left;
       var targetWidth = target.offsetWidth;

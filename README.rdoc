@@ -42,9 +42,19 @@ To install as a plugin simply run:
 
   script/plugin install git://github.com/pilaf/stars.git
 
-(Remember to restart your local server)
+(Remember to restart your local server afterward)
 
-Next you'll need to generate the ratings migration and run it
+<b>NOTE:</b> Installing the plugin will automatically generate asset files
+(JS, CSS and images) under their respective directories in <tt>public</tt>
+and an initializer file under <tt>config/initializers</tt>. These files
+will be removed for you if you choose to uninstall the plugin using
+<tt>script/plugin remove stars</tt>.
+
+== Usage
+
+=== Setup of Models and Routes
+
+After installing you'll need to generate the ratings migration and run it:
 
   script/generate ratings_migration
   rake db:migrate
@@ -67,13 +77,26 @@ And then the corresponding resource in your <tt>config/routes.rb</tt> file:
     article.ratings 
   end
 
-<b>NOTE:</b> Installing the plugin will automatically generate asset files
-(JS, CSS and images) under their respective directories in <tt>public</tt>
-and an initializer file under <tt>config/initializers</tt>. These files
-will be removed for you if you choose to uninstall the plugin using
-<tt>script/plugin remove stars</tt>.
+=== Views
 
-== Examples
+To use in your views make sure to include the plugin's JavaScript and CSS files
+in your views:
+
+  <%= stars_rating_stylesheets %>
+  <%= stars_rating_javascripts %>
+
+If you're planning to use both in the <tt>head</tt> tag you can also use the
+shorthand version:
+
+  <%= stars_rating_assets %>
+
+Though I recommend including the JavaScript at the bottom of your <tt>body</tt>
+tag.
+
+To insert a rating widget use the <tt>rating_for</tt> helper, passing it the
+model instance to be rated:
+
+  <%= rating_for @article %>
 
 == Configuration
 
