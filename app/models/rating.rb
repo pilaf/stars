@@ -30,9 +30,12 @@ class Rating < ActiveRecord::Base
   #
   attr_accessible :rating, :rational_rating
 
+  # Custom accessor to allow setting the rating as a ratio (given by values between 0 and 1)
+  # This allows setting the rating independently of the chosen range (by default 1 to 5)
+  #
   def rational_rating=(ratio)
     ratio = ratio.to_f
-    self.rating = ((Stars::Model.max_rating - 1) * ratio + 1).to_i
+    self.rating = (Stars::Model.max_rating * ratio).round
   end
 
 private
