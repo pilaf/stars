@@ -12,10 +12,13 @@ finished "product" (as the incomplete status of this doc probably shows).
 Please check the TODO list below to see if any of the missing items are things
 you need before using this plugin.
 
-== Dependencies
+== Requirements
 
-So far it's only been tested on Rails 2.3.X, but it would probably work just as
-fine on 2.2.x.
+* So far it's only been tested on Rails 2.3.X, but it would probably work just as
+fine on 2.2.x
+* An user model (class name can be specified through configuration), and logged in
+  user accessible through a controller method (e.g. <tt>current_user</tt>)
+* Resourceful routes
 
 == Features
 
@@ -50,6 +53,12 @@ To make a model/resource rateable add the following line to your model class:
     is_rateable
   end
 
+You'll also need to add a rating_average column to the model's table.
+Fortunately there's a generator to do that for you:
+
+  script/generate add_rating_average_migration article
+  rake db:migrate
+
 And then the corresponding resource in your <tt>config/routes.rb</tt> file:
 
   map.resources :articles do |article|
@@ -67,6 +76,8 @@ will be removed for you if you choose to uninstall the plugin using
 == Configuration
 
 To configure edit your <tt>config/initializers/stars_rating.rb</tt>.
+
+== Internals (How Things Work)
 
 == TODOs
 
