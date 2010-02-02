@@ -12,11 +12,16 @@ module RatingsHelper
   end
 
   def rating_for(object)
-    rating_class = "rating_#{object.rounded_rating.floor.to_i}"
-    rating_class << '_half' if (object.rounded_rating % 1) > 0
+    # Check if this object has been rated before
+    unless object.rounded_rating.nil?
+      rating_class = "rating_#{object.rounded_rating.floor.to_i}"
+      rating_class << '_half' if (object.rounded_rating % 1) > 0
+    else
+      rating_class = ''
+    end
 
     content_tag(:button, '', {
-      :class            => "stars_rating #{rating_class}",
+      :class            => "stars_rating #{rating_class}".strip,
       'data-rating-url' => url_for([object, :rating])
     })
   end
