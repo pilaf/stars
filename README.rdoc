@@ -35,11 +35,38 @@ fine on 2.2.x.
 
 == Installing
 
+To install as a plugin simply run:
+
   script/plugin install git://github.com/pilaf/stars.git
+
+Next you'll need to generate the ratings migration and run it
+
+  script/generate ratings_migration
+  rake db:migrate
+
+To make a model/resource rateable add the following line to your model class:
+
+  class Article < ActiveRecord::Base
+    is_rateable
+  end
+
+And then the corresponding resource in your <tt>config/routes.rb</tt> file:
+
+  map.resources :articles do |article|
+    article.ratings 
+  end
+
+<b>NOTE:</b> Installing the plugin will automatically generate asset files
+(JS, CSS and images) under their respective directories in <tt>public</tt>
+and an initializer file under <tt>config/initializers</tt>. These files
+will be removed for you if you choose to uninstall the plugin using
+<tt>script/plugin remove stars</tt>.
 
 == Examples
 
 == Configuration
+
+To configure edit your <tt>config/initializers/stars_rating.rb</tt>.
 
 == TODOs
 
@@ -48,6 +75,8 @@ fine on 2.2.x.
 * Add I18n support
 * Distribute as gem
 * Test on multiple browsers
+
+== Known issues
 
 == Credits
 
