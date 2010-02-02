@@ -25,6 +25,7 @@ class Rating < ActiveRecord::Base
   #
   after_create :delete_previous_rating
   after_create :update_rateable_average
+  after_destroy :update_rateable_average
 
   # Make sure only the rating is mass-assignable
   #
