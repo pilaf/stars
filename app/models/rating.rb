@@ -36,7 +36,7 @@ class Rating < ActiveRecord::Base
   #
   def rational_rating=(ratio)
     ratio = ratio.to_f
-    self.rating = (Stars::Model.max_rating * ratio).round
+    self.rating = (Stars::Model.max_rating * ratio + 1).to_i
   end
 
 private
