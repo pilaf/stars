@@ -23,6 +23,10 @@ fine on 2.2.x.
 * Built-in rating model (can be used to rate any other ActiveRecord model
   through polymorphic associations)
 * Helper methods to generate rating "widgets" in your views
+* Reflection method for ActiveRecord models: <tt>is_rateable</tt> as a pretty
+  alternative to <tt>include Stars::Rateable</tt>
+* Shorthand method for routes: <tt>ratings</tt> as a pretty alternative to
+  <tt>resource :ratings, :only => :create</tt>
 * Generators for migrations and assets (JS, CSS and images)
 * HTML5-based event handling, allowing for JavaScript framework independence
   (by default only a Prototype-based handler is provided,  but porting to
@@ -30,6 +34,8 @@ fine on 2.2.x.
 * Pretty configuration through an initializer
 
 == Installing
+
+  script/plugin install git://github.com/pilaf/stars.git
 
 == Examples
 
