@@ -15,7 +15,7 @@ you need before using this plugin.
 == Requirements
 
 * So far it's only been tested on Rails 2.3.X, but it would probably work just as
-fine on 2.2.x
+  fine on 2.2.x
 * An user model (class name can be specified through configuration), and logged in
   user accessible through a controller method (e.g. <tt>current_user</tt>)
 * Resourceful routes
@@ -41,6 +41,8 @@ fine on 2.2.x
 To install as a plugin simply run:
 
   script/plugin install git://github.com/pilaf/stars.git
+
+(Remember to restart your local server)
 
 Next you'll need to generate the ratings migration and run it
 
