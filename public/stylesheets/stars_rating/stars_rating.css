@@ -4,7 +4,7 @@ button.stars_rating {
   border: 0;
   padding: 0;
   margin: 0;
-  background: url('/images/stars_ratings.png');
+  background: url('/images/stars_rating/stars_rating.png');
   cursor: pointer;
   vertical-align: middle;
 }

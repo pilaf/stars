@@ -4,11 +4,11 @@ module RatingsHelper
   end
 
   def stars_rating_stylesheets
-    stylesheet_link_tag('stars_rating')
+    stylesheet_link_tag('stars_rating/stars_rating')
   end
 
   def stars_rating_javascripts
-    javascript_include_tag('stars_rating')
+    javascript_include_tag('stars_rating/stars_rating')
   end
 
   def rating_for(object)
