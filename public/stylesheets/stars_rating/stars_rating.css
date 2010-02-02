@@ -1,0 +1,16 @@
+button.stars_rating {
+  width: 80px;
+  height: 16px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: url('/images/stars_ratings.png');
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+button.stars_rating.rating_1, button.stars_rating.rating_1_half { background-position: left -16px }
+button.stars_rating.rating_2, button.stars_rating.rating_2_half { background-position: left -32px }
+button.stars_rating.rating_3, button.stars_rating.rating_3_half { background-position: left -48px }
+button.stars_rating.rating_4, button.stars_rating.rating_4_half { background-position: left -64px }
+button.stars_rating.rating_5, button.stars_rating.rating_5_half { background-position: left -80px }

@@ -1,0 +1,48 @@
+= Stars
+
+Stars is a Rails engine plugin that provides simple rating logic for your Rails
+apps with high customizability.
+
+By default Stars provide a simple rating widget with 5 "stars" (duh). Think of
+the rating system on YouTube. Logged in users can click on the widget to submit
+their own rating (works through AJAX).
+
+<b>NOTE:</b> Although this is good enough for my own use it's not yet a
+finished "product" (as the incomplete status of this doc probably shows).
+Please check the TODO list below to see if any of the missing items are things
+you need before using this plugin.
+
+== Dependencies
+
+So far it's only been tested on Rails 2.3.X, but it would probably work just as
+fine on 2.2.x.
+
+== Features
+
+* Built-in controller logic (via Rails engines), no need for generators
+* Built-in rating model (can be used to rate any other ActiveRecord model
+  through polymorphic associations)
+* Helper methods to generate rating "widgets" in your views
+* Generators for migrations and assets (JS, CSS and images)
+* HTML5-based event handling, allowing for JavaScript framework independence
+  (by default only a Prototype-based handler is provided,  but porting to
+  jQuery, mootools or other similar frameworks shouldn't be too hard)
+* Pretty configuration through an initializer
+
+== Installing
+
+== Examples
+
+== Configuration
+
+== TODOs
+
+* Add tests
+* Add rake tasks to recalculate all averages
+* Add I18n support
+* Distribute as gem
+* Test on multiple browsers
+
+== Credits
+
+Copyright (c) 2010 Pedro Fayolle (aka Pilaf), released under the MIT license
